@@ -344,6 +344,70 @@ service cloud.firestore {
                        canModifyProject(resource.data.projectId);
     }
     
+    // Workflow Templates (Unified)
+    match /workflow-templates/{templateId} {
+      // Allow authenticated users to read/write
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated();
+      allow update: if isAuthenticated();
+      allow delete: if isAuthenticated();
+    }
+    
+    // Workflow Instances (Unified) - kebab-case collection name
+    match /workflow-instances/{instanceId} {
+      // Allow authenticated users to read/write their own instances
+      // Or if they belong to the organization
+      allow read: if isAuthenticated() && (
+        !('createdBy' in resource.data) ||
+        resource.data.createdBy == request.auth.uid ||
+        !('organizationId' in resource.data) ||
+        belongsToOrganization(resource.data.organizationId) ||
+        isOwnerOrAdmin()
+      );
+      allow create: if isAuthenticated();
+      allow update: if isAuthenticated() && (
+        !('createdBy' in resource.data) ||
+        resource.data.createdBy == request.auth.uid ||
+        !('organizationId' in resource.data) ||
+        belongsToOrganization(resource.data.organizationId) ||
+        isOwnerOrAdmin()
+      );
+      allow delete: if isAuthenticated() && (
+        !('createdBy' in resource.data) ||
+        resource.data.createdBy == request.auth.uid ||
+        !('organizationId' in resource.data) ||
+        belongsToOrganization(resource.data.organizationId) ||
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // Workflow Instances (Unified) - camelCase collection name (alternative)
+    match /workflowInstances/{instanceId} {
+      // Allow authenticated users to read/write their own instances
+      allow read: if isAuthenticated() && (
+        !('createdBy' in resource.data) ||
+        resource.data.createdBy == request.auth.uid ||
+        !('organizationId' in resource.data) ||
+        belongsToOrganization(resource.data.organizationId) ||
+        isOwnerOrAdmin()
+      );
+      allow create: if isAuthenticated();
+      allow update: if isAuthenticated() && (
+        !('createdBy' in resource.data) ||
+        resource.data.createdBy == request.auth.uid ||
+        !('organizationId' in resource.data) ||
+        belongsToOrganization(resource.data.organizationId) ||
+        isOwnerOrAdmin()
+      );
+      allow delete: if isAuthenticated() && (
+        !('createdBy' in resource.data) ||
+        resource.data.createdBy == request.auth.uid ||
+        !('organizationId' in resource.data) ||
+        belongsToOrganization(resource.data.organizationId) ||
+        isOwnerOrAdmin()
+      );
+    }
+    
     // Timecard Templates
     match /timecardTemplates/{templateId} {
       allow read: if belongsToOrganization(resource.data.organizationId);
