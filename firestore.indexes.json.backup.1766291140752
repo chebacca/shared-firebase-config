@@ -1,21 +1,6 @@
 {
   "indexes": [
     {
-      "collectionGroup": "ai_agents",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
       "collectionGroup": "aiAgents",
       "queryScope": "COLLECTION",
       "fields": [
@@ -27,23 +12,7 @@
           "fieldPath": "name",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "airtableSyncHistory",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "timestamp",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "appRoleDefinitions",
@@ -57,8 +26,7 @@
           "fieldPath": "appName",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "appRoleDefinitions",
@@ -76,8 +44,7 @@
           "fieldPath": "isActive",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "appRoleDefinitions",
@@ -99,8 +66,7 @@
           "fieldPath": "isActive",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "automationExecutions",
@@ -114,8 +80,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "automationFunctions",
@@ -129,8 +94,7 @@
           "fieldPath": "name",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "automationLogs",
@@ -144,8 +108,7 @@
           "fieldPath": "executedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "automationLogs",
@@ -163,8 +126,7 @@
           "fieldPath": "executedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "automationLogs",
@@ -182,8 +144,7 @@
           "fieldPath": "executedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "automationLogs",
@@ -201,8 +162,7 @@
           "fieldPath": "executedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "automationRules",
@@ -216,8 +176,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "automationRules",
@@ -231,8 +190,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "automationRules",
@@ -250,8 +208,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "automationRules",
@@ -269,46 +226,7 @@
           "fieldPath": "enabled",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "autoProcessedFiles",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "backboneIndexedFiles",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "type",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "updatedAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "brainMemory",
@@ -322,57 +240,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "budgetItems",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "id",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "calendarEvents",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "startDate",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "calendarEvents",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "projectId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "startDate",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "calendarEvents",
@@ -380,6 +248,54 @@
       "fields": [
         {
           "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "calendarEvents",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        {
+          "fieldPath": "start",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "calendarEvents",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "startDate",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "calendarEvents",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "startDate",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "calendarEvents",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "projectId",
           "order": "ASCENDING"
         },
         {
@@ -404,8 +320,7 @@
           "fieldPath": "startDate",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "calendarEvents",
@@ -423,8 +338,7 @@
           "fieldPath": "startDate",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "calendarEvents",
@@ -482,8 +396,7 @@
           "fieldPath": "startDate",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "calendarEvents",
@@ -505,8 +418,7 @@
           "fieldPath": "startDate",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "calendarEvents",
@@ -528,53 +440,7 @@
           "fieldPath": "startDate",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "callsheet-projects",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "ownerId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "updatedAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "callsheetCallSheets",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "callsheetCallSheets",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "date",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "callsheets",
@@ -588,8 +454,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "callsheets",
@@ -603,8 +468,7 @@
           "fieldPath": "date",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "callsheets",
@@ -618,8 +482,7 @@
           "fieldPath": "status",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "callSheets",
@@ -633,8 +496,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "callSheets",
@@ -652,92 +514,7 @@
           "fieldPath": "userId",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "clipLicenseAssignments",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "clipLicenseAssignments",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "clipName",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "clipLicenseAssignments",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "licenseHouseId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "clipLicenseAssignments",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "sourceFile",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowAlerts",
@@ -762,44 +539,6 @@
       ]
     },
     {
-      "collectionGroup": "clipShowBudgetMetadata",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "projectId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "updatedAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "clipShowComments",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "pitchId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
       "collectionGroup": "clipShowContacts",
       "queryScope": "COLLECTION",
       "fields": [
@@ -811,42 +550,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "clipShowFolders",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "clipShowFolders",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "parentId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "name",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowIndexedFiles",
@@ -860,8 +564,7 @@
           "fieldPath": "folderPath",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowIndexedFiles",
@@ -893,8 +596,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowIndexedFiles",
@@ -912,8 +614,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowLicenseEmailHistory",
@@ -927,8 +628,7 @@
           "fieldPath": "sentAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowLicenseEmailHistory",
@@ -946,8 +646,7 @@
           "fieldPath": "sentAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowLicenseEmailHistory",
@@ -965,8 +664,7 @@
           "fieldPath": "sentAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowLicenses",
@@ -980,8 +678,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowLicenseTemplates",
@@ -999,8 +696,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowNotes",
@@ -1018,46 +714,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "clipShowParsedFiles",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "fileName",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "parsedAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "clipShowParsedFiles",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "projectId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "parsedAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowPitches",
@@ -1071,8 +728,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowPitches",
@@ -1090,8 +746,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowProjects",
@@ -1105,8 +760,7 @@
           "fieldPath": "isActive",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowProjects",
@@ -1120,8 +774,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowProjects",
@@ -1139,27 +792,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "clipShowSeasons",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "showId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "seasonNumber",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowShows",
@@ -1173,8 +806,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowShows",
@@ -1192,8 +824,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowSignedDocuments",
@@ -1211,8 +842,7 @@
           "fieldPath": "uploadedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowSignedDocuments",
@@ -1230,8 +860,7 @@
           "fieldPath": "uploadedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowStories",
@@ -1245,8 +874,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowStories",
@@ -1260,8 +888,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "clipShowStories",
@@ -1279,8 +906,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "contacts",
@@ -1294,8 +920,7 @@
           "fieldPath": "name",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "contacts",
@@ -1309,8 +934,7 @@
           "fieldPath": "type",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "contacts",
@@ -1328,8 +952,7 @@
           "fieldPath": "__name__",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "conversations",
@@ -1343,23 +966,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "conversations",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "lastMessageAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "conversations",
@@ -1372,6 +979,20 @@
         {
           "fieldPath": "isArchived",
           "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "conversations",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "lastMessageAt",
+          "order": "DESCENDING"
         }
       ]
     },
@@ -1408,30 +1029,29 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "participants",
-          "arrayConfig": "CONTAINS"
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
         },
         {
-          "fieldPath": "organizationId",
+          "fieldPath": "projectId",
           "order": "ASCENDING"
         },
         {
           "fieldPath": "lastMessageAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "conversations",
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
+          "fieldPath": "participants",
+          "arrayConfig": "CONTAINS"
         },
         {
-          "fieldPath": "projectId",
+          "fieldPath": "organizationId",
           "order": "ASCENDING"
         },
         {
@@ -1452,8 +1072,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "dailyCallSheets",
@@ -1467,8 +1086,7 @@
           "fieldPath": "recordDate",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "dailyCallSheets",
@@ -1482,8 +1100,7 @@
           "fieldPath": "templateCallSheetId",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "datasets",
@@ -1497,8 +1114,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "datasets",
@@ -1516,8 +1132,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "datasets",
@@ -1535,8 +1150,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "datasets",
@@ -1554,23 +1168,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "dataSyncEvents",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "timestamp",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "deliverables",
@@ -1630,31 +1228,7 @@
           "fieldPath": "uploadedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "edlFileChunks",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "fileId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "projectId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "chunkIndex",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "edlFiles",
@@ -1700,8 +1274,7 @@
           "fieldPath": "uploadedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "edlFiles",
@@ -1719,23 +1292,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "edlProjects",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "enhancedDeliverables",
@@ -1749,8 +1306,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "files",
@@ -1764,155 +1320,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "firebaseStorageFiles",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "uploadedAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "firebaseStorageFolders",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "folders",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "folders",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "indexedFolderSnapshots",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "lastUpdated",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "indexedFolderSnapshots",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "inlineComments",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "resolved",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "inlineComments",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "versionId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "inlineComments",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "resolved",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "versionId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "inventory",
@@ -1926,23 +1334,7 @@
           "fieldPath": "category",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "inventory",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "lastUpdated",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "inventory",
@@ -1983,13 +1375,26 @@
         {
           "fieldPath": "lastUpdated",
           "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "inventory",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "userId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "lastUpdated",
+          "order": "DESCENDING"
         },
         {
           "fieldPath": "__name__",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "inventoryAssignmentHistory",
@@ -2039,8 +1444,7 @@
           "fieldPath": "name",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "inventoryItems",
@@ -2086,23 +1490,7 @@
           "fieldPath": "name",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "inventorySchemas",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "name",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "invoices",
@@ -2116,8 +1504,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "invoices",
@@ -2131,8 +1518,7 @@
           "fieldPath": "dueDate",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "invoices",
@@ -2146,8 +1532,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "invoices",
@@ -2161,46 +1546,7 @@
           "fieldPath": "status",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "legalBibles",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "lastUpdated",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "legalDeliverables",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "lastUpdated",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "license_delivery_logs",
@@ -2214,8 +1560,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "license_delivery_logs",
@@ -2229,137 +1574,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "licenseHouses",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "name",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "licenseHouses",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "isActive",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "name",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "licenseHouses",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "isActive",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "licenseHouseTemplates",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "licenses",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organization.id",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "licenses",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "assignedToUserId",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "licenses",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "licenses",
@@ -2380,6 +1595,48 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
+          "fieldPath": "organization.id",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "licenses",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "assignedToUserId",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "licenses",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "licenses",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
           "fieldPath": "organizationId",
           "order": "ASCENDING"
         },
@@ -2419,8 +1676,7 @@
           "fieldPath": "expiresAt",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "licenses",
@@ -2438,8 +1694,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "mapLayouts",
@@ -2457,8 +1712,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "mediaFiles",
@@ -2472,8 +1726,7 @@
           "fieldPath": "uploadedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "mediaFiles",
@@ -2491,8 +1744,27 @@
           "fieldPath": "uploadedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
+    },
+    {
+      "collectionGroup": "messages",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "messages",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
     },
     {
       "collectionGroup": "messages",
@@ -2506,23 +1778,7 @@
           "fieldPath": "timestamp",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "messages",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "read",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "messages",
@@ -2543,6 +1799,20 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
+          "fieldPath": "userId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "read",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "messages",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
           "fieldPath": "messageSessionId",
           "order": "ASCENDING"
         },
@@ -2554,8 +1824,7 @@
           "fieldPath": "timestamp",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "messages",
@@ -2573,8 +1842,7 @@
           "fieldPath": "timestamp",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "messages",
@@ -2592,8 +1860,7 @@
           "fieldPath": "__name__",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "messages",
@@ -2611,8 +1878,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "messages",
@@ -2652,8 +1918,7 @@
           "fieldPath": "timestamp",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "messages",
@@ -2675,8 +1940,7 @@
           "fieldPath": "createdAt",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "messageSessions",
@@ -2708,8 +1972,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "messageSessions",
@@ -2727,8 +1990,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "messageSessions",
@@ -2746,8 +2008,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "messageSessions",
@@ -2765,8 +2026,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "messageSessions",
@@ -2806,57 +2066,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "migrationPlans",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "networkDeliveryBibles",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "networkDeliveryBibles",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "uploadedAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "networkDeliveryBibles",
@@ -2881,8 +2091,36 @@
           "order": "ASCENDING"
         },
         {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "networkDeliveryBibles",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
           "fieldPath": "projectId",
           "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "networkDeliveryBibles",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "uploadedAt",
+          "order": "DESCENDING"
         }
       ]
     },
@@ -2902,8 +2140,7 @@
           "fieldPath": "uploadedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "networkDeliveryBibles",
@@ -2921,8 +2158,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "networkDeliveryBibles",
@@ -2940,8 +2176,7 @@
           "fieldPath": "uploadedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "networkIPAssignments",
@@ -2955,8 +2190,7 @@
           "fieldPath": "assignedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "networkIPAssignments",
@@ -2974,8 +2208,7 @@
           "fieldPath": "assignedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "networkIPRanges",
@@ -2989,8 +2222,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "networkIPRanges",
@@ -3018,8 +2250,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "networks",
@@ -3037,57 +2268,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "nleSourceFolders",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "isActive",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "nleSourceFolders",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "nleSourceFolders",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "show",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "notes",
@@ -3101,8 +2282,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "notes",
@@ -3116,8 +2296,7 @@
           "fieldPath": "type",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "notes",
@@ -3135,8 +2314,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "notes",
@@ -3154,8 +2332,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "notifications",
@@ -3169,8 +2346,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "notifications",
@@ -3184,8 +2360,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "notifications",
@@ -3199,8 +2374,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "notifications",
@@ -3232,8 +2406,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "notifications",
@@ -3251,8 +2424,7 @@
           "fieldPath": "timestamp",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "notifications",
@@ -3292,8 +2464,7 @@
           "fieldPath": "__name__",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "org_members",
@@ -3311,8 +2482,7 @@
           "fieldPath": "__name__",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "org_members",
@@ -3330,8 +2500,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "org_members",
@@ -3349,8 +2518,17 @@
           "fieldPath": "status",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
+    },
+    {
+      "collectionGroup": "organizations",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "name",
+          "order": "ASCENDING"
+        }
+      ]
     },
     {
       "collectionGroup": "organizations",
@@ -3364,8 +2542,7 @@
           "fieldPath": "tier",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "organizations",
@@ -3379,8 +2556,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "organizations",
@@ -3394,8 +2570,7 @@
           "fieldPath": "createdAt",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "organizations",
@@ -3427,8 +2602,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "orgMembers",
@@ -3446,8 +2620,7 @@
           "fieldPath": "__name__",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "orgMembers",
@@ -3465,8 +2638,7 @@
           "fieldPath": "__name__",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "orgMembers",
@@ -3484,8 +2656,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "orgMembers",
@@ -3503,8 +2674,7 @@
           "fieldPath": "status",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "parsing-patterns",
@@ -3518,23 +2688,7 @@
           "fieldPath": "successRate",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "parsing-patterns",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "successRate",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "parsing-patterns",
@@ -3546,6 +2700,20 @@
         },
         {
           "fieldPath": "confidence",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "parsing-patterns",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "successRate",
           "order": "DESCENDING"
         }
       ]
@@ -3604,8 +2772,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "payments",
@@ -3619,8 +2786,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "payments",
@@ -3634,8 +2800,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "payments",
@@ -3649,38 +2814,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "pbm_schedules",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "startDate",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "pbm_schedules",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "pbmPayscales",
@@ -3698,8 +2832,7 @@
           "fieldPath": "order",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "pbmProjects",
@@ -3713,8 +2846,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "pbmSchedules",
@@ -3732,42 +2864,7 @@
           "fieldPath": "order",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "personnelInvitations",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "invitedAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "personnelProfiles",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "portfolios",
@@ -3795,8 +2892,7 @@
           "fieldPath": "organizationId",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "postProductionTasks",
@@ -3814,8 +2910,7 @@
           "fieldPath": "__name__",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "privacy_consents",
@@ -3829,8 +2924,7 @@
           "fieldPath": "consentDate",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "productionSessions",
@@ -3844,8 +2938,7 @@
           "fieldPath": "deadline",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "project_team_members",
@@ -3863,8 +2956,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "projectAssignments",
@@ -3882,8 +2974,7 @@
           "fieldPath": "assignedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "projectAssignments",
@@ -3901,8 +2992,7 @@
           "fieldPath": "isActive",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "projectAssignments",
@@ -3920,128 +3010,7 @@
           "fieldPath": "assignedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "projectData",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "projectId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "lastSyncAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "projectFolderAssignments",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "folderId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "projects",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "projects",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "projects",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "name",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "projects",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "projects",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "updatedAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "projects",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "name",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "projects",
@@ -4066,6 +3035,90 @@
           "order": "ASCENDING"
         },
         {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "projects",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "projects",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "name",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "projects",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "projects",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "updatedAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "projects",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "userId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "name",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "projects",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
           "fieldPath": "isActive",
           "order": "ASCENDING"
         },
@@ -4073,8 +3126,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "projects",
@@ -4092,8 +3144,7 @@
           "fieldPath": "isArchived",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "projects",
@@ -4111,8 +3162,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "projects",
@@ -4130,8 +3180,7 @@
           "fieldPath": "lastAccessedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "projects",
@@ -4149,8 +3198,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "projects",
@@ -4168,8 +3216,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "projects",
@@ -4187,8 +3234,7 @@
           "fieldPath": "lastAccessedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "projects",
@@ -4206,8 +3252,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "projectTeamMembers",
@@ -4221,8 +3266,7 @@
           "fieldPath": "teamMemberId",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "projectTeamMembers",
@@ -4240,8 +3284,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "publishedCallSheets",
@@ -4333,8 +3376,7 @@
           "fieldPath": "category",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "reports",
@@ -4348,23 +3390,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "reports",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "type",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "reports",
@@ -4399,6 +3425,20 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
+          "fieldPath": "userId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "type",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "reports",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
           "fieldPath": "organizationId",
           "order": "ASCENDING"
         },
@@ -4410,8 +3450,7 @@
           "fieldPath": "__name__",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "reviewFilePaths",
@@ -4425,8 +3464,7 @@
           "fieldPath": "reviewSessionId",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "reviewSessionReviewers",
@@ -4440,8 +3478,7 @@
           "fieldPath": "organizationId",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "reviewSessions",
@@ -4455,8 +3492,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "reviewSessions",
@@ -4470,8 +3506,7 @@
           "fieldPath": "organizationId",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "reviewSessions",
@@ -4489,57 +3524,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "savedContainers",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "savedContainers",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "projectId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "scheduledActions",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "executeAt",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "schedulerEvents",
@@ -4553,8 +3538,7 @@
           "fieldPath": "date",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "schedulerEvents",
@@ -4568,38 +3552,7 @@
           "fieldPath": "date",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "schema_fields",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "collectionName",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "fieldName",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "schema_fields",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "schemaId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "order",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "schemas",
@@ -4613,23 +3566,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "sessionAutomations",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "scheduledTime",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "sessionReviews",
@@ -4643,8 +3580,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "sessionReviews",
@@ -4662,8 +3598,21 @@
           "fieldPath": "__name__",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
+    },
+    {
+      "collectionGroup": "sessions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "createdBy",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        }
+      ]
     },
     {
       "collectionGroup": "sessions",
@@ -4677,23 +3626,7 @@
           "fieldPath": "organizationId",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "sessions",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "sessions",
@@ -4707,8 +3640,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "sessions",
@@ -4719,67 +3651,7 @@
           "order": "ASCENDING"
         },
         {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "sessions",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "updatedAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "sessions",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "projectId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "sessions",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "sessions",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "createdBy",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "organizationId",
+          "fieldPath": "createdAt",
           "order": "ASCENDING"
         }
       ]
@@ -4821,6 +3693,62 @@
           "order": "ASCENDING"
         },
         {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "sessions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "updatedAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "sessions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "projectId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "sessions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "userId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "sessions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
           "fieldPath": "projectId",
           "order": "ASCENDING"
         },
@@ -4828,8 +3756,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "sessions",
@@ -4847,8 +3774,7 @@
           "fieldPath": "__name__",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "sessions",
@@ -4866,8 +3792,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "sessionWorkflows",
@@ -4885,8 +3810,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "settings",
@@ -4901,51 +3825,6 @@
           "order": "ASCENDING"
         }
       ]
-    },
-    {
-      "collectionGroup": "standaloneCallSheets",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "standaloneCallSheetTemplates",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "standaloneDailyCallSheets",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "recordDate",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
     },
     {
       "collectionGroup": "standaloneLicenses",
@@ -4987,8 +3866,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "subscriptions",
@@ -5002,23 +3880,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "subscriptions",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "subscriptions",
@@ -5053,6 +3915,20 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
+          "fieldPath": "userId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "subscriptions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
           "fieldPath": "organizationId",
           "order": "ASCENDING"
         },
@@ -5064,8 +3940,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "team_members",
@@ -5079,8 +3954,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "team_members",
@@ -5094,23 +3968,7 @@
           "fieldPath": "role",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "teamMembers",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "email",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "teamMembers",
@@ -5124,8 +3982,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "teamMembers",
@@ -5136,11 +3993,10 @@
           "order": "ASCENDING"
         },
         {
-          "fieldPath": "status",
+          "fieldPath": "email",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "teamMembers",
@@ -5152,6 +4008,20 @@
         },
         {
           "fieldPath": "role",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "teamMembers",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "status",
           "order": "ASCENDING"
         }
       ]
@@ -5186,8 +4056,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "teamMembers",
@@ -5205,8 +4074,7 @@
           "fieldPath": "lastActive",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "teamMembers",
@@ -5224,8 +4092,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "teamMembers",
@@ -5247,8 +4114,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "timecard_approvals",
@@ -5262,8 +4128,7 @@
           "fieldPath": "submittedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "timecard_approvals",
@@ -5281,8 +4146,7 @@
           "fieldPath": "submittedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "timecard_entries",
@@ -5300,8 +4164,7 @@
           "fieldPath": "date",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "timecardApprovals",
@@ -5347,8 +4210,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "timecardConfigurations",
@@ -5373,30 +4235,20 @@
       "queryScope": "COLLECTION_GROUP",
       "fields": [
         {
-          "fieldPath": "userId",
+          "fieldPath": "organizationId",
           "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "weekStart",
-          "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "timecards",
-      "queryScope": "COLLECTION",
+      "queryScope": "COLLECTION_GROUP",
       "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
         {
           "fieldPath": "status",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "timecards",
@@ -5422,6 +4274,20 @@
         },
         {
           "fieldPath": "projectId",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "timecards",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "status",
           "order": "ASCENDING"
         }
       ]
@@ -5484,64 +4350,7 @@
     },
     {
       "collectionGroup": "timecards",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "approvedAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "timecards",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "submittedAt",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "timecards",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "userId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "date",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "timecards",
-      "queryScope": "COLLECTION",
+      "queryScope": "COLLECTION_GROUP",
       "fields": [
         {
           "fieldPath": "userId",
@@ -5550,13 +4359,8 @@
         {
           "fieldPath": "weekStart",
           "order": "DESCENDING"
-        },
-        {
-          "fieldPath": "__name__",
-          "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "timecards",
@@ -5607,8 +4411,80 @@
           "order": "ASCENDING"
         },
         {
+          "fieldPath": "approvedAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "timecards",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        },
+        {
           "fieldPath": "date",
           "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "timecards",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "submittedAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "timecards",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "userId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "timecards",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "userId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "weekStart",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "__name__",
+          "order": "ASCENDING"
         }
       ]
     },
@@ -5628,8 +4504,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "trashcan",
@@ -5643,8 +4518,7 @@
           "fieldPath": "deletedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "unifiedWorkflowInstances",
@@ -5686,8 +4560,7 @@
           "fieldPath": "timestamp",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "usage_analytics",
@@ -5701,8 +4574,7 @@
           "fieldPath": "action",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "usage_analytics",
@@ -5716,8 +4588,7 @@
           "fieldPath": "timestamp",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "usage_analytics",
@@ -5735,8 +4606,7 @@
           "fieldPath": "__name__",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "user_timecards",
@@ -5750,8 +4620,7 @@
           "fieldPath": "date",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "user_timecards",
@@ -5769,8 +4638,17 @@
           "fieldPath": "entryNumber",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "email",
+          "order": "ASCENDING"
+        }
+      ]
     },
     {
       "collectionGroup": "users",
@@ -5784,8 +4662,7 @@
           "fieldPath": "isEmailVerified",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "users",
@@ -5799,8 +4676,7 @@
           "fieldPath": "organizationId",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "users",
@@ -5814,8 +4690,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "users",
@@ -5829,8 +4704,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "users",
@@ -5844,8 +4718,7 @@
           "fieldPath": "role",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "users",
@@ -5859,38 +4732,7 @@
           "fieldPath": "status",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "users",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "role",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "createdAt",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "users",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "lastActive",
-          "order": "DESCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "users",
@@ -5911,6 +4753,34 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
+          "fieldPath": "role",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "lastActive",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
           "fieldPath": "isActive",
           "order": "ASCENDING"
         },
@@ -5922,8 +4792,7 @@
           "fieldPath": "displayName",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "users",
@@ -5941,8 +4810,7 @@
           "fieldPath": "memberStatus",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "users",
@@ -5960,8 +4828,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "users",
@@ -5979,8 +4846,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "userSettings",
@@ -5998,8 +4864,7 @@
           "fieldPath": "updatedAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "videoMeetings",
@@ -6063,8 +4928,7 @@
           "fieldPath": "retryCount",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "workflowActions",
@@ -6090,23 +4954,7 @@
           "fieldPath": "timestamp",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "workflowInstances",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "sessionId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "workflowInstances",
@@ -6119,6 +4967,20 @@
         {
           "fieldPath": "createdAt",
           "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "workflowInstances",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "sessionId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
         }
       ]
     },
@@ -6148,8 +5010,21 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
+    },
+    {
+      "collectionGroup": "workflows",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "sessionId",
+          "order": "ASCENDING"
+        }
+      ]
     },
     {
       "collectionGroup": "workflows",
@@ -6163,8 +5038,7 @@
           "fieldPath": "status",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "workflows",
@@ -6178,19 +5052,18 @@
           "fieldPath": "priority",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
-      "collectionGroup": "workflows",
+      "collectionGroup": "workflowSteps",
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "organizationId",
+          "fieldPath": "sessionId",
           "order": "ASCENDING"
         },
         {
-          "fieldPath": "sessionId",
+          "fieldPath": "organizationId",
           "order": "ASCENDING"
         }
       ]
@@ -6207,8 +5080,7 @@
           "fieldPath": "phase",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "workflowSteps",
@@ -6222,8 +5094,7 @@
           "fieldPath": "order",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "workflowSteps",
@@ -6231,21 +5102,6 @@
       "fields": [
         {
           "fieldPath": "workflowInstanceId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "organizationId",
-          "order": "ASCENDING"
-        }
-      ],
-      "density": "SPARSE_ALL"
-    },
-    {
-      "collectionGroup": "workflowSteps",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "sessionId",
           "order": "ASCENDING"
         },
         {
@@ -6270,8 +5126,7 @@
           "fieldPath": "order",
           "order": "ASCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "workflowTemplates",
@@ -6285,8 +5140,7 @@
           "fieldPath": "createdAt",
           "order": "DESCENDING"
         }
-      ],
-      "density": "SPARSE_ALL"
+      ]
     },
     {
       "collectionGroup": "workflowTemplates",
