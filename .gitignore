@@ -1,2 +1,39 @@
 slack-config.json
 slack-config.json
+
+# ============================================================================
+# SENSITIVE FILES - NEVER COMMIT THESE
+# ============================================================================
+
+# Firebase Service Account Keys (NEVER COMMIT)
+*firebase*adminsdk*.json
+*service-account*.json
+*serviceAccount*.json
+firebase-service-account.json
+backbone-logic-*.json
+
+# Environment Files
+.env
+.env.*
+!.env.example
+*.env.local
+*.env.bak
+
+# API Keys and Secrets
+*api-key*
+*secret-key*
+secrets.json
+credentials.json
+
+# Auth Tokens
+*token*.txt
+*.token
+*.auth
+*.secret
+*.password
+
+# Certificates
+*.pem
+*.crt
+*.key
+
