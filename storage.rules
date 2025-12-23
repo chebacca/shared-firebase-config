@@ -4,23 +4,6 @@ service firebase.storage {
   match /b/{bucket}/o {
     
     // ============================================================================
-    // MESSAGING ATTACHMENTS - Clip Show Pro
-    // ============================================================================
-    
-    // Messaging attachments - organization and conversation scoped
-    match /messaging/{organizationId}/{conversationId}/{fileName} {
-      // Allow read if user is authenticated and belongs to organization
-      allow read: if request.auth != null;
-      
-      // Allow write if user is authenticated, belongs to organization, and file is under 10MB
-      allow write: if request.auth != null 
-        && request.resource.size < 10 * 1024 * 1024; // 10MB limit
-      
-      // Allow delete if user is authenticated and belongs to organization
-      allow delete: if request.auth != null;
-    }
-    
-    // ============================================================================
     // UNIFIED STORAGE SECURITY RULES - ALL PROJECTS
     // ============================================================================
     // Supports: Dashboard, Licensing Website, Call Sheet App, EDL Converter, Parser Brain
@@ -59,7 +42,16 @@ service firebase.storage {
       return (organizationId == 'standalone' && 
               (request.auth.token.email == 'standalone.user@example.com' || 
                request.auth.token.email.matches('.*@example\\.com$'))) ||
-             (isAuthenticated() && getOrganizationId() == organizationId);
+             (isAuthenticated() && (
+               // Check if user's primary organizationId matches
+               getOrganizationId() == organizationId ||
+               // Check secondary organizationId
+               (getUserClaims().get('secondaryOrganizationId', '') != '' && 
+                getUserClaims().get('secondaryOrganizationId', '') == organizationId) ||
+               // For admin users, allow access to any organization (more permissive)
+               // This helps with cases where organizationId might not match exactly
+               isOwnerOrAdmin()
+             ));
     }
     
     // Check if user has specific role
@@ -190,6 +182,36 @@ service firebase.storage {
       allow write: if isAuthenticated() && belongsToOrganization(orgId) && isOwnerOrAdmin() && isValidFileSize() && isValidFileType();
     }
     
+    // Organization map layout images
+    // Path: organizations/{orgId}/maps/layouts/{layoutId}/{fileName}
+    match /organizations/{orgId}/maps/layouts/{layoutId}/{fileName} {
+      allow read: if isAuthenticated() && belongsToOrganization(orgId);
+      allow write: if isAuthenticated() 
+                   && belongsToOrganization(orgId)
+                   && request.resource.size <= 10 * 1024 * 1024 // 10MB limit for map images
+                   && (request.resource.contentType.matches('image/.*') ||
+                       request.resource.contentType.matches('application/octet-stream'));
+      allow delete: if isAuthenticated() && belongsToOrganization(orgId);
+    }
+    
+    // Organization project-scoped map layout images
+    // Path: organizations/{orgId}/projects/{projectId}/maps/layouts/{layoutId}/{fileName}
+    match /organizations/{orgId}/projects/{projectId}/maps/layouts/{layoutId}/{fileName} {
+      allow read: if isAuthenticated() && (
+        belongsToOrganization(orgId) ||
+        canAccessProject(projectId)
+      );
+      allow write: if isAuthenticated() 
+                   && (belongsToOrganization(orgId) || canModifyProject(projectId))
+                   && request.resource.size <= 10 * 1024 * 1024 // 10MB limit for map images
+                   && (request.resource.contentType.matches('image/.*') ||
+                       request.resource.contentType.matches('application/octet-stream'));
+      allow delete: if isAuthenticated() && (
+        belongsToOrganization(orgId) ||
+        canModifyProject(projectId)
+      );
+    }
+    
     // ============================================================================
     // PROJECT-SPECIFIC FILES
     // ============================================================================
@@ -221,6 +243,31 @@ service firebase.storage {
     // ============================================================================
     // CALL SHEET APP FILES
     // ============================================================================
+    
+    // Call sheet organization-scoped files
+    // Path structure: callsheet/{organizationId}/{projectId}/{callsheetId}/locations/{locationId}/{imageId}
+    match /callsheet/{organizationId}/{allPaths=**} {
+      // Allow read if user belongs to organization OR has call sheet access
+      allow read: if isAuthenticated() && (
+        belongsToOrganization(organizationId) ||
+        (hasCallSheetAccess() && getOrganizationId() != '')
+      );
+      
+      // Allow write if user belongs to organization and file meets size/type requirements
+      allow write: if isAuthenticated()
+        && (belongsToOrganization(organizationId) || 
+            (hasCallSheetAccess() && getOrganizationId() != ''))
+        && request.resource.size <= 50 * 1024 * 1024 // 50 MB limit for call sheet files
+        && (request.resource.contentType.matches('image/.*') ||
+            request.resource.contentType.matches('application/pdf') ||
+            request.resource.contentType.matches('text/.*'));
+      
+      // Allow delete if user belongs to organization
+      allow delete: if isAuthenticated() && (
+        belongsToOrganization(organizationId) ||
+        (hasCallSheetAccess() && getOrganizationId() != '')
+      );
+    }
     
     // Call sheet templates
     match /callsheets/templates/{fileName} {
@@ -287,6 +334,103 @@ service firebase.storage {
     }
     
     // ============================================================================
+    // CLIP SHOW PRO - LICENSE MANAGEMENT FILES
+    // ============================================================================
+    
+    // Signed documents for license agreements
+    // Path: signed-documents/{organizationId}/{licenseId}/{fileName}
+    match /signed-documents/{organizationId}/{licenseId}/{fileName} {
+      // Allow read for authenticated users in the organization
+      allow read: if isAuthenticated() && belongsToOrganization(organizationId);
+      
+      // Allow write (upload) for authenticated users in the organization
+      // Must be PDF and under 10MB
+      allow write: if isAuthenticated() 
+                   && belongsToOrganization(organizationId)
+                   && request.resource.contentType == 'application/pdf'
+                   && request.resource.size <= 10 * 1024 * 1024; // 10MB limit
+      
+      // Allow delete for authenticated users in the organization
+      allow delete: if isAuthenticated() && belongsToOrganization(organizationId);
+    }
+    
+    // License templates
+    // Path: license-templates/{organizationId}/{templateName}/{fileName}
+    match /license-templates/{organizationId}/{templateName}/{fileName} {
+      // Allow read for authenticated users in the organization
+      allow read: if isAuthenticated() && belongsToOrganization(organizationId);
+      
+      // Allow write (upload) for authenticated users in the organization
+      // Must be PDF and under 10MB
+      allow write: if isAuthenticated() 
+                   && belongsToOrganization(organizationId)
+                   && request.resource.contentType == 'application/pdf'
+                   && request.resource.size <= 10 * 1024 * 1024; // 10MB limit
+      
+      // Allow delete for authenticated users in the organization
+      allow delete: if isAuthenticated() && belongsToOrganization(organizationId);
+    }
+    
+    // ============================================================================
+    // CLIP SHOW PRO - STORY FILES
+    // ============================================================================
+    
+    // Story documents
+    // Path: story-documents/{organizationId}/{storyId}/{fileName}
+    match /story-documents/{organizationId}/{storyId}/{fileName} {
+      // Allow read for authenticated users in the organization
+      allow read: if isAuthenticated() && belongsToOrganization(organizationId);
+      
+      // Allow write (upload) for authenticated users in the organization
+      // Max 50MB file size
+      allow write: if isAuthenticated() 
+                   && belongsToOrganization(organizationId)
+                   && request.resource.size <= 50 * 1024 * 1024; // 50MB limit
+      
+      // Allow delete for authenticated users in the organization
+      allow delete: if isAuthenticated() && belongsToOrganization(organizationId);
+    }
+    
+    // Story VO audio files
+    // Path: story-vo-audio/{organizationId}/{storyId}/{fileName}
+    match /story-vo-audio/{organizationId}/{storyId}/{fileName} {
+      // Allow read for authenticated users in the organization
+      allow read: if isAuthenticated() && belongsToOrganization(organizationId);
+      
+      // Allow write (upload) for authenticated users in the organization
+      // Must be audio file and under 50MB
+      allow write: if isAuthenticated() 
+                   && belongsToOrganization(organizationId)
+                   && (request.resource.contentType.matches('audio/.*') ||
+                       request.resource.name.matches('.*\\.(mp3|wav|aac|flac|ogg|m4a|wma|aiff|opus|3gp|mpga|mp2)$'))
+                   && request.resource.size <= 50 * 1024 * 1024; // 50MB limit
+      
+      // Allow delete for authenticated users in the organization
+      allow delete: if isAuthenticated() && belongsToOrganization(organizationId);
+    }
+    
+    // ============================================================================
+    // CLIP SHOW PRO - COLLABORATION DOCUMENTS
+    // ============================================================================
+    
+    // Collaboration documents for Yjs real-time editing
+    // Path: collaboration/script-{storyId}/{timestamp}.yjs
+    // Allows authenticated users to store Yjs collaboration state for script editing
+    // These are large binary files used for real-time collaborative editing
+    match /collaboration/{allPaths=**} {
+      // Allow read for authenticated users (collaboration documents are shared)
+      allow read: if isAuthenticated();
+      
+      // Allow write (upload) for authenticated users
+      // Max 20MB file size (Yjs state files can be large)
+      allow write: if isAuthenticated() 
+                   && request.resource.size <= 20 * 1024 * 1024; // 20MB limit
+      
+      // Allow delete for authenticated users
+      allow delete: if isAuthenticated();
+    }
+    
+    // ============================================================================
     // SYSTEM FILES
     // ============================================================================
     
@@ -313,6 +457,27 @@ service firebase.storage {
     }
     
     // ============================================================================
+    // TRANSCRIPTION TASKS - Async video transcription temporary storage
+    // ============================================================================
+    
+    // Transcription task video files (stored temporarily during processing)
+    // Path: transcription-tasks/{organizationId}/{taskId}/{fileName}
+    match /transcription-tasks/{organizationId}/{taskId}/{fileName} {
+      // Allow read for authenticated users in the organization
+      allow read: if isAuthenticated() && belongsToOrganization(organizationId);
+      
+      // Allow write (upload) for authenticated users in the organization
+      // Must be video file, max 2GB for Gemini Pro
+      allow write: if isAuthenticated() 
+                   && belongsToOrganization(organizationId)
+                   && request.resource.contentType.matches('video/.*')
+                   && request.resource.size <= 2 * 1024 * 1024 * 1024; // 2GB limit
+      
+      // Allow delete for authenticated users in the organization or system cleanup
+      allow delete: if isAuthenticated() && belongsToOrganization(organizationId);
+    }
+    
+    // ============================================================================
     // TEMPORARY FILES
     // ============================================================================
     
@@ -324,16 +489,24 @@ service firebase.storage {
     }
     
     // ============================================================================
-    // MESSAGING SYSTEM STORAGE
+    // CLIP SHOW PRO - USER FILES (NATIVE FIREBASE STORAGE)
     // ============================================================================
     
-    // Message attachments - organized by organization and conversation
-    match /messaging/{organizationId}/{conversationId}/{fileName} {
+    // User Files - Native Firebase Storage
+    // Path: organizations/{organizationId}/user-files/{allPaths=**}
+    // Allows organization members to upload and manage their own files
+    // Supports video, audio, documents, images - general file storage
+    match /organizations/{organizationId}/user-files/{allPaths=**} {
+      // Allow read for authenticated users in the organization
       allow read: if isAuthenticated() && belongsToOrganization(organizationId);
-      allow write: if isAuthenticated() && 
-        belongsToOrganization(organizationId) && 
-        isValidFileSize() && 
-        isValidFileType();
+      
+      // Allow write (upload) for authenticated users in the organization
+      // Max 500MB file size for large media files
+      allow write: if isAuthenticated() 
+                   && belongsToOrganization(organizationId)
+                   && request.resource.size <= 500 * 1024 * 1024; // 500MB limit
+      
+      // Allow delete for authenticated users in the organization
       allow delete: if isAuthenticated() && belongsToOrganization(organizationId);
     }
     
