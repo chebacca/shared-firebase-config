@@ -1519,6 +1519,260 @@ service cloud.firestore {
     }
     
     // ============================================================================
+    // COLLECTION GROUP QUERIES - For Ecosystem-Wide Data Access
+    // ============================================================================
+    // These rules allow collectionGroup queries across the entire database
+    // for specific collections, enabling cross-app relationship graph queries
+    
+    // Post-Production Tasks - Allow collectionGroup queries for user activity
+    match /{path=**}/postProductionTasks/{taskId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // Checkout Records (IWM) - Allow collectionGroup queries for equipment tracking
+    match /{path=**}/checkoutRecords/{recordId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow if user is the one who checked out the item
+        (resource != null && resource.data != null && 
+         (resource.data.userId == request.auth.uid || 
+          resource.data.checkedOutBy == request.auth.uid)) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // Network Devices (IWM) - Allow collectionGroup queries for device management
+    match /{path=**}/networkDevices/{deviceId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow if user is assigned to the device
+        (resource != null && resource.data != null && 
+         (resource.data.assignedTo == request.auth.uid || 
+          resource.data.managedBy == request.auth.uid)) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // Call Sheets - Allow collectionGroup queries for production schedules
+    match /{path=**}/callSheets/{sheetId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow if user created the call sheet
+        (resource != null && resource.data != null && 
+         resource.data.userId == request.auth.uid) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // Team Members - Allow collectionGroup queries for user search
+    match /{path=**}/teamMembers/{memberId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // Pitches - Allow collectionGroup queries for content discovery
+    match /{path=**}/pitches/{pitchId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow if user created the pitch
+        (resource != null && resource.data != null && 
+         resource.data.userId == request.auth.uid) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // Stories - Allow collectionGroup queries for content discovery
+    match /{path=**}/stories/{storyId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow if user created the story
+        (resource != null && resource.data != null && 
+         resource.data.userId == request.auth.uid) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // Inventory - Allow collectionGroup queries for asset tracking
+    match /{path=**}/inventory/{inventoryId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // Sessions - Allow collectionGroup queries for production tracking
+    match /{path=**}/sessions/{sessionId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow if user created the session
+        (resource != null && resource.data != null && 
+         resource.data.userId == request.auth.uid) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // ClipPitches - Allow collectionGroup queries for content discovery
+    match /{path=**}/clipPitches/{pitchId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow if user created the pitch or is assigned as producer
+        (resource != null && resource.data != null && 
+         (resource.data.userId == request.auth.uid || 
+          resource.data.producerId == request.auth.uid ||
+          resource.data.assignedProducerId == request.auth.uid)) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // ProductionStories - Allow collectionGroup queries for content discovery
+    match /{path=**}/productionStories/{storyId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow if user created or is writer of the story
+        (resource != null && resource.data != null && 
+         (resource.data.userId == request.auth.uid || 
+          resource.data.writerId == request.auth.uid)) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // Timecards - Allow collectionGroup queries for timecard tracking
+    match /{path=**}/timecards/{timecardId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow if user owns the timecard
+        (resource != null && resource.data != null && 
+         resource.data.userId == request.auth.uid) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // ClipShowCalendarEvents - Allow collectionGroup queries for calendar access
+    match /{path=**}/clipShowCalendarEvents/{eventId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // CueSheets - Allow collectionGroup queries for music licensing
+    match /{path=**}/cueSheets/{cueSheetId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // BudgetValues - Allow collectionGroup queries for budget tracking
+    match /{path=**}/budgetValues/{budgetId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // ProjectSessions - Allow collectionGroup queries for session tracking
+    match /{path=**}/projectSessions/{sessionId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // LicenseAgreements - Allow collectionGroup queries for licensing
+    match /{path=**}/licenseAgreements/{agreementId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // CalendarEvents - Allow collectionGroup queries (already have specific rules, adding general)
+    match /{path=**}/calendarEvents/{eventId} {
+      allow read: if isAuthenticated() && (
+        // Allow if document belongs to user's organization
+        (resource != null && resource.data != null && 
+         resource.data.organizationId != null && 
+         belongsToOrganization(resource.data.organizationId)) ||
+        // Allow admins
+        isOwnerOrAdmin()
+      );
+    }
+    
+    // ============================================================================
     
     // Explicit deny for unmatched paths
     match /{document=**} {
