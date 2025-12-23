@@ -6263,6 +6263,25 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
+          "fieldPath": "workflowInstanceId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "phase",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        }
+      ],
+      "density": "SPARSE_ALL"
+    },
+    {
+      "collectionGroup": "workflowSteps",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
           "fieldPath": "sessionId",
           "order": "ASCENDING"
         },
@@ -6333,6 +6352,17 @@
           "order": "DESCENDING"
         }
       ]
+    },
+    {
+      "collectionGroup": "entityLocations",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "mapLayoutId",
+          "order": "ASCENDING"
+        }
+      ],
+      "density": "SPARSE_ALL"
     }
   ],
   "fieldOverrides": []
