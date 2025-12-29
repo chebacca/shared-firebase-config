@@ -15,6 +15,42 @@
       ]
     },
     {
+      "collectionGroup": "callsheetDailyRecords",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "recordDate",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dailyCallSheetRecords",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "organizationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "recordDate",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "teamMembers",
       "queryScope": "COLLECTION",
       "fields": [
