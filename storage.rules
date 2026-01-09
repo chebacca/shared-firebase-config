@@ -511,6 +511,24 @@ service firebase.storage {
     }
     
     // ============================================================================
+    // SIGNATURE STORAGE
+    // ============================================================================
+    
+    // Remote signatures
+    // Path: signatures/{fileName}
+    match /signatures/{fileName} {
+      // Allow read for anyone (access restricted by knowing the filename/ID)
+      // This allows the signatures to be displayed in receipts and dashboards
+      allow read: if true;
+      
+      // Allow write (upload) for both authenticated and unauthenticated users
+      // This is a special case for remote handoffs where the signer may not have an account
+      // We restrict it to images and small size
+      allow write: if request.resource.size < 2 * 1024 * 1024 // 2MB limit for signature images
+                   && (request.resource.contentType.matches('image/.*') || fileName.matches('.*\\.png'));
+    }
+    
+    // ============================================================================
     // CATCH-ALL RULE
     // ============================================================================
     
