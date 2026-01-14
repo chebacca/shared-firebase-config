@@ -8846,7 +8846,8 @@
           "fieldPath": "indexedAt",
           "order": "DESCENDING"
         }
-      ]
+      ],
+      "density": "SPARSE_ALL"
     },
     {
       "collectionGroup": "files",
@@ -8864,7 +8865,8 @@
           "fieldPath": "metadata.storyId",
           "order": "ASCENDING"
         }
-      ]
+      ],
+      "density": "SPARSE_ALL"
     }
   ]
 }
